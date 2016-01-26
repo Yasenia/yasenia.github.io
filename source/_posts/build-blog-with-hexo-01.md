@@ -24,7 +24,7 @@ tags: [hexo, blog, github]
 # 3. 安装 hexo
 nodeJs 安装成功后，我们可以很方便的通过 node 包管理器（npm）来下载安装 hexo 及其所依赖的插件。
 在 shell 中执行指令：
-``` shell
+``` Bash
 ~$ npm install hexo-cli -g
 ```
 上述指令执行成功后，hexo 客户端程序就已经在你的机器上成功安装了。
@@ -33,12 +33,12 @@ nodeJs 安装成功后，我们可以很方便的通过 node 包管理器（npm�
 
 # 4. 初始化你的 blog
 在 shell 中执行指令：
-``` shell
+``` Bash
 ~$ hexo init blog
 ```
 hexo 会在当前目录下生成一个名为 `blog` 目录（当然你也可以换成其它你喜欢的名称），此博客相关的配置、主题与文本内容等都在此目录下由 hexo 进行管理。
 接下来，在 shell 中执行:
-``` shell
+``` Bash
 ~$ cd blog
 ~/blog$ npm install
 ```
@@ -47,7 +47,7 @@ hexo 会在当前目录下生成一个名为 `blog` 目录（当然你也可以�
 通常，hexo 会自动生成一篇名为 Hello World 的缺省博客，它的位置为：
  `~/blog/source/_posts/hello-world.md`
 在 shell 中执行以下两条指令：
-``` shell
+``` Bash
 ~/blog$ hexo generate
 ~/blog$ hexo server
 ```
@@ -59,11 +59,11 @@ hexo 会在当前目录下生成一个名为 `blog` 目录（当然你也可以�
 # 5. 创建和编辑文章
 当你完成上述步骤后，本地的 hexo 已经基本搭建完成了。
 现在，我们希望新建一篇名为 `Hello Hexo` 的文章。在 shell 中执行：
-``` shell
+``` Bash
 ~/blog$ hexo new "Hello Hexo"
 ```
 这样，我们就完成了文章的新建，我们可以用 vim 或其他编辑器打开位于 `~/blog/source/_posts` 目录中的 `Hello-Hexo.md` 文件。在 shell 中执行：
-``` shell
+``` Bash
 ~/blog$ vim source/_posts/Hello-Hexo.md
 ```
 打开文章后，我们可以看到如下内容：
@@ -76,7 +76,7 @@ hexo 会在当前目录下生成一个名为 `blog` 目录（当然你也可以�
 在两个 `---` 之间的是 yaml 格式的文章配置，其中可以指定文章标题、日期、标签等。
 在第二个 `---` 之后，我们可以使用 Markdown 语法编写这篇博客正文。
 文章编写完成后，重新生成网页并启动 hexo 服务，在 shell 中执行：
-``` shell
+``` Bash
 ~/blog$ hexo generate
 ~/blog$ hexo server
 ```
