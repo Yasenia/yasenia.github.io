@@ -16,7 +16,7 @@
 <meta property="og:description" content="最近项目组招新人，让我帮忙出了套面试题。这套题目内容覆盖了继承、异常、线程、同步锁、正则表达式、集合类、数据结构、简单算法以及少量Java8新特性。虽然东西都很基础，但想全部答对还是有一定的难度的。
 选择题
 以下哪组方法签名构成了方法的重载 ( ) A. void foo(List&amp;lt;String&amp;gt; list); 与 void foo(List&amp;lt;Integer&amp;gt; list);">
-<meta property="og:updated_time" content="2016-05-05T08:26:18.000Z">
+<meta property="og:updated_time" content="2016-05-05T08:31:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原创 Java 面试题">
 <meta name="twitter:description" content="最近项目组招新人，让我帮忙出了套面试题。这套题目内容覆盖了继承、异常、线程、同步锁、正则表达式、集合类、数据结构、简单算法以及少量Java8新特性。虽然东西都很基础，但想全部答对还是有一定的难度的。
@@ -228,26 +228,20 @@
 </li>
 <li><p>实现如下签名的方法:  </p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;<span class="keyword">int</span>[]&gt; permutations(<span class="keyword">int</span>[] src);</span><br></pre></td></tr></table></figure>
+<p>要求输入一个数组,输出这个数组中元素的全排列构成的列表</p>
+<p>测试用例：</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">List&lt;<span class="keyword">int</span>[]&gt; result = permutations(src);</span><br><span class="line">result.forEach(arr -&gt; &#123;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">truetrueSystem.out.print(i + <span class="string">" "</span>)</span><br><span class="line">true&#125;</span><br><span class="line">trueSystem.out.println();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">assert</span> result.size() == <span class="number">6</span>;</span><br><span class="line"><span class="comment">// 1	2	3	</span></span><br><span class="line"><span class="comment">// 2	1	3	</span></span><br><span class="line"><span class="comment">// 2	3	1	</span></span><br><span class="line"><span class="comment">// 1	3	2	</span></span><br><span class="line"><span class="comment">// 3	1	2	</span></span><br><span class="line"><span class="comment">// 3	2	1</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<pre><code>要求输入一个数组,输出这个数组中元素的全排列构成的列表
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="选择题-1"><a href="#选择题-1" class="headerlink" title="选择题:"></a>选择题:</h3><p>1~4: CBAB</p>
+<h3 id="填空题-1"><a href="#填空题-1" class="headerlink" title="填空题:"></a>填空题:</h3><ol>
+<li><code>50</code></li>
+<li><code>removeAll(listB);</code></li>
+<li>查改、增删</li>
+<li>静态代码块: a = 0<br> 初始化代码块: b = 0<br> 构造方法: b = 1</li>
+</ol>
+<h3 id="编程题-1"><a href="#编程题-1" class="headerlink" title="编程题:"></a>编程题:</h3><p>略</p>
 
-测试用例：
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">List&lt;<span class="keyword">int</span>[]&gt; result = permutations(src);</span><br><span class="line">result.forEach(arr -&gt; &#123;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">truetrueSystem.out.print(i + <span class="string">" "</span>)</span><br><span class="line">true&#125;</span><br><span class="line">trueSystem.out.println();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">assert</span> result.size() == <span class="number">6</span>;</span><br><span class="line"><span class="comment">/*</span><br><span class="line">1	2	3	</span><br><span class="line">2	1	3	</span><br><span class="line">2	3	1	</span><br><span class="line">1	3	2	</span><br><span class="line">3	1	2	</span><br><span class="line">3	2	1	</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><pre><code>选择题:  
-1~4: CBAB
-
-填空题:  
-1. `50`
-2. `removeAll(listB);`
-3. 查改、增删
-4. 静态代码块: a = 0  
-   初始化代码块: b = 0  
-   构造方法: b = 1
-
-编程题:  略
-</code></pre>
       
     </div>
     
