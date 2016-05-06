@@ -179,56 +179,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近项目组招新人，让我帮忙出了套面试题。<br>这套题目内容覆盖了继承、异常、线程、同步锁、正则表达式、集合类、数据结构、简单算法以及少量Java8新特性。<br>虽然东西都很基础，但想全部答对还是有一定的难度的。</p>
-<h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h2><ol>
-<li><p>以下哪组方法签名构成了方法的重载 ( )<br> A. <code>void foo(List&lt;String&gt; list);</code> 与 <code>void foo(List&lt;Integer&gt; list);</code><br> B. <code>void foo(List&lt;String&gt; list);</code> 与 <code>String foo(List&lt;String&gt; list);</code><br> C. <code>void foo(String[] arr);</code> 与 <code>void foo(Integer[] arr);</code><br> D. <code>void foo(String[] arr);</code> 与 <code>String foo(String[] arr);</code>  </p>
-</li>
-<li><p>以下说法，正确的是 ( )<br> A. 父类方法中抛出受检异常，子类重写该方法时，必须抛出该异常或该异常的超类。<br> B. 父类方法中抛出受检异常，子类重写该方法时，必须抛出该异常或该异常的子类。<br> C. 父类方法中抛出非受检异常，子类重写该方法时，必须抛出该异常或该异常的超类。<br> D. 父类方法中抛出非受检异常，子类重写该方法时，必须抛出该异常或该异常的子类。</p>
-</li>
-<li><p>以下哪项可能是程序运行后的结果 ( )<br> A. <code>0 1 2 0 1 2 0 1 2</code><br> B. <code>0 0 0 1 1 1 2 2 2</code><br> C. <code>0 0 1 1 2 2 0 1 2</code><br> D. <code>throw exception</code>  </p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Question03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">new</span> Printer(String.valueOf(i)).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Printer</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Printer</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">                System.out.print(message + <span class="string">" "</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException ignored) &#123;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>以下程序的运行结果为 ( )<br> A. <code>&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;;</code><br> B. <code>html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html;</code><br> C. <code>&lt;html&gt;; &lt;body&gt;; &lt;/body&gt;; &lt;/html&gt;;</code><br> D. <code>html; body; /body; /html;</code>  </p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Question04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Pattern pattern = Pattern.compile(<span class="string">"&lt;(.*)&gt;"</span>);</span><br><span class="line">        Matcher matcher = pattern.matcher(<span class="string">"&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"</span>);</span><br><span class="line">        <span class="keyword">while</span> (matcher.find()) &#123;</span><br><span class="line">            System.out.print(matcher.group(<span class="number">1</span>) + “; ”);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h2><ol>
-<li><p>以下程序将输出________。<br> <code>IntStream.range(0, 10).filter(i -&gt; i % 2 != 0).map(i -&gt; i * 2).sum();</code>  </p>
-</li>
-<li><p>现有<code>listA</code>与<code>listB</code>两个<code>List&lt;String&gt;</code>类型的列表，要得到所有在<code>listA</code>且不在<code>listB</code>中的字符串的集合，应该调用<code>listA.</code>________。</p>
-</li>
-<li><p>对于<code>List</code>的而言，<code>ArrayList</code>适用于________操作较频繁的场景，<code>LinkedList</code>适用于________操作较频繁的场景。</p>
-</li>
-<li><p>以下程序将输出________________________。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"静态代码块: a = "</span> + a);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"初始化代码块: b = "</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"构造方法: b = "</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Foo();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><ol>
-<li><p>实现如下签名的方法:  </p>
-<p> <code>public static int fact(int n);</code></p>
-<p> 方法返回n的阶乘，要求分别用迭代与递归两种方式实现该方法。如果可能，请将递归优化为尾递归实现。  </p>
-<p> 测试用例：</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">assert</span> <span class="title">fact</span><span class="params">(<span class="number">5</span>)</span> </span>== <span class="number">120</span>;</span><br><span class="line"><span class="function"><span class="keyword">assert</span> <span class="title">fact</span><span class="params">(<span class="number">6</span>)</span> </span>== <span class="number">720</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实现一个简化版的<code>List&lt;E&gt;</code>类，需要实现以下方法：  </p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>;						<span class="comment">// 返回列表长度</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;				<span class="comment">// 判断列表是否为空</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span></span>;		<span class="comment">// 判断列表是否包含元素 o</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;				<span class="comment">// 向列表中添加元素 e，返回操作是否成功</span></span><br><span class="line"><span class="function">E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>;			<span class="comment">// 移除下标为 index 的元素，并返回该元素</span></span><br><span class="line"><span class="function">E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>;				<span class="comment">// 获取下标为 index 的元素</span></span><br><span class="line"><span class="function">E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>;			<span class="comment">// 将下标为 index 的元素设为 e，并返回原位置的元素</span></span><br></pre></td></tr></table></figure>
-<p> 要求：不允许使用 Java 自带的类库，底层用数组实现。可以向 List 中无限制添加数据。</p>
-</li>
-<li><p>实现如下签名的方法:  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;<span class="keyword">int</span>[]&gt; permutations(<span class="keyword">int</span>[] src);</span><br></pre></td></tr></table></figure>
-<p>要求输入一个数组,输出这个数组中元素的全排列构成的列表</p>
-<p>测试用例：</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">List&lt;<span class="keyword">int</span>[]&gt; result = permutations(src);</span><br><span class="line">result.forEach(arr -&gt; &#123;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">truetrueSystem.out.print(i + <span class="string">" "</span>)</span><br><span class="line">true&#125;</span><br><span class="line">trueSystem.out.println();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">assert</span> result.size() == <span class="number">6</span>;</span><br><span class="line"><span class="comment">// 1	2	3	</span></span><br><span class="line"><span class="comment">// 2	1	3	</span></span><br><span class="line"><span class="comment">// 2	3	1	</span></span><br><span class="line"><span class="comment">// 1	3	2	</span></span><br><span class="line"><span class="comment">// 3	1	2	</span></span><br><span class="line"><span class="comment">// 3	2	1</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="选择题-1"><a href="#选择题-1" class="headerlink" title="选择题:"></a>选择题:</h3><p>1~4: CBAB</p>
-<h3 id="填空题-1"><a href="#填空题-1" class="headerlink" title="填空题:"></a>填空题:</h3><ol>
-<li><code>50</code></li>
-<li><code>removeAll(listB);</code></li>
-<li>查改、增删</li>
-<li>静态代码块: a = 0<br> 初始化代码块: b = 0<br> 构造方法: b = 1</li>
-</ol>
-<h3 id="编程题-1"><a href="#编程题-1" class="headerlink" title="编程题:"></a>编程题:</h3><p>略</p>
-
       
     </div>
     
@@ -241,6 +191,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/05/java-interview-question/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -286,156 +240,6 @@
       
         <p>在函数式编程中，Monad 是一个重要的抽象概念。它为我们提供了一个更高的抽象层次来处理多态类型，在编码实践中有着广泛的应用。</p>
 <p>然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。</p>
-<p>关于 Monad，有这样一句广为流传的定义：</p>
-<blockquote>
-<p><em>A monad is just a monoid in the category of endofunctors, what’s the problem?</em></p>
-</blockquote>
-<p>对于 Wadler 这样的大神级人物而言，或许仅仅一句话就能解释 Monad 的本质，但对于大多数人而言，看到这样的定义只会更加的迷惑不解吧。</p>
-<p>本文将基于 scala 语言，从范畴论的简单基础谈起，介绍 Monad 等概念的定义，进而讨论 Monad 与范畴论之间的联系。</p>
-<p>目录：</p>
-<ol>
-<li><em>代数系统简介——半群、幺半群与群</em></li>
-<li><em>Semigroup 与 Monoid 特质</em></li>
-<li><em>Functor 特质</em></li>
-<li><em>Applicative 特质</em></li>
-<li><em>Monad 特质</em></li>
-<li><em>Monad 与 Monoid 的联系</em></li>
-</ol>
-<h2 id="1-代数系统简介——半群、幺半群与群"><a href="#1-代数系统简介——半群、幺半群与群" class="headerlink" title="1. 代数系统简介——半群、幺半群与群"></a>1. 代数系统简介——半群、幺半群与群</h2><p>在正式讨论 Monad 及其相关概念之前，本文将先介绍一些基本的代数学知识进行铺垫。这并不需要你有范畴论、离散数学等相关方面的专业知识，只需要对下面几种概念有个大致的了解即可。</p>
-<ul>
-<li><p>半群(Semigroup)</p>
-<blockquote>
-<p>给定代数系统 $V =(S, ⊙)$，其中 $S$ 为非空集合，$⊙$ 为作用在 $S$ 上的二元运算。若对任意的 $a, b, c ∈ S$ ，总有 $a ⊙ b ∈ S$ 且 $(a ⊙ b) ⊙ c = a ⊙ (b ⊙ c)$。则称 $V$ 是一个半群。</p>
-</blockquote>
-</li>
-<li><p>幺半群(Monoid)</p>
-<blockquote>
-<p>给定半群 $M = (S, ⊙)$。若存在 $e ∈ S$，对任意的 $x ∈ S$，总有 $e ⊙ x = x ⊙ e = e$。则称 $M$ 是一个幺半群,也记做 $M=(S, ⊙, e)$。</p>
-</blockquote>
-</li>
-<li><p>群(Group)</p>
-<blockquote>
-<p>给定幺半群 $G = (S, ⊙, e)$。若对任意的 a ∈ S，总存在 $b ∈ S$，使得 $a ⊙ b = e$ 成立。则称 $G$ 是一个群。</p>
-</blockquote>
-</li>
-</ul>
-<p>下表对比了半群、幺半群与群所拥有的特性：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">特性</th>
-<th style="text-align:center">半群(Semigroup)</th>
-<th style="text-align:center">幺半群(Monoid)</th>
-<th style="text-align:center">群(Group)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">封闭性</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-</tr>
-<tr>
-<td style="text-align:center">结合律</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-</tr>
-<tr>
-<td style="text-align:center">单位元</td>
-<td style="text-align:center">×</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-</tr>
-<tr>
-<td style="text-align:center">逆元</td>
-<td style="text-align:center">×</td>
-<td style="text-align:center">×</td>
-<td style="text-align:center">√</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-Semigroup-与-Monoid-特质"><a href="#2-Semigroup-与-Monoid-特质" class="headerlink" title="2. Semigroup 与 Monoid 特质"></a>2. Semigroup 与 Monoid 特质</h2><p>根据半群与幺半群的定义，我们可以很容易的给出它们对应数据结构特质的实现：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Semigroup</span>[<span class="type">A</span>] </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">op</span></span>(a1: <span class="type">A</span>, a2: <span class="type">A</span>): <span class="type">A</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Monoid</span>[<span class="type">A</span>] <span class="keyword">extends</span> <span class="title">Semigroup</span>[<span class="type">A</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">val</span> zero: <span class="type">A</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于幺半群是一种特殊的半群（具有幺元的半群），因此在这里特质<code>Monoid</code>继承自特质<code>Semigroup</code>。</p>
-<p>需要注意的是，在这里我们只是定义了两个代数系统对应的数据结构，这并不意味着所有实现了<code>Semigroup</code>(或<code>Monoid</code>)特质的类型就是半群（或幺半群）。以<code>Monoid</code>特质为例，我们仅在特质里定义了幺半群中的二元运算<code>op</code>与单位元<code>zero</code>的存在，但并不保证二元运算满足结合律且单位元满足不变性，即不能保证以下断言可以运行通过：</p>
-<ul>
-<li>结合律断言 <code>assert(m.op(m.op(a, b), c) == m.op(a, m.op(b, c)))</code></li>
-<li>不变性断言 <code>assert(m.op(m.zero, a) == a &amp;&amp; m.op(a, m.zero) == a)</code></li>
-</ul>
-<p>这两点需要我们在具体实现的代码中书写正确的逻辑来确保。</p>
-<p>这里给出几个<code>Monoid</code>的简单实现：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// M(Int, +, 0)</span></span><br><span class="line"><span class="keyword">val</span> intAdditionMonoid: <span class="type">Monoid</span>[<span class="type">Int</span>] = <span class="keyword">new</span> <span class="type">Monoid</span>[<span class="type">Int</span>] &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="keyword">val</span> zero: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">op</span></span>(a1: <span class="type">Int</span>, a2: <span class="type">Int</span>): <span class="type">Int</span> = a1 + a2</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// M(Int, *, 1)</span></span><br><span class="line"><span class="keyword">val</span> intProductMonoid: <span class="type">Monoid</span>[<span class="type">Int</span>] = <span class="keyword">new</span> <span class="type">Monoid</span>[<span class="type">Int</span>] &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="keyword">val</span> zero: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">op</span></span>(a1: <span class="type">Int</span>, a2: <span class="type">Int</span>): <span class="type">Int</span> = a1 * a2</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// M(String, +, "")</span></span><br><span class="line"><span class="keyword">val</span> stringConcatMonoid: <span class="type">Monoid</span>[<span class="type">String</span>] = <span class="keyword">new</span> <span class="type">Monoid</span>[<span class="type">String</span>] &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="keyword">val</span> zero: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">op</span></span>(a1: <span class="type">String</span>, a2: <span class="type">String</span>): <span class="type">String</span> = a1 + a2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-Functor-特质"><a href="#3-Functor-特质" class="headerlink" title="3. Functor 特质"></a>3. Functor 特质</h2><p>我们见过许多泛型类，如<code>List[A]</code>、<code>Option[A]</code>等。在大多数 Monad 相关的教程中，人们总是把这样的泛型类比喻成“盒子”，这个比喻当然很精妙，但也不总是那么贴切，不过在这里我们暂时沿用它。</p>
-<p>假设我们有一个<code>F[A]</code>类型的数据，我们可以知道<code>F</code>这个盒子里的数据是<code>A</code>类型的（事实上并不一定是这样，准确的说应该是盒子的数据形态依赖于<code>A</code>，这也是为什么说“盒子”的比喻不总是贴切的），同时我们有一个函数<code>f: A =&gt; B</code>，它接收<code>A</code>类型的数据并返回<code>B</code>类型的数据。如果我们希望通过某种途径，基于<code>f: A =&gt; B</code>和<code>F[A]</code>得到一个新的数据结构<code>F[B]</code>，应该怎么做呢？</p>
-<p>把大象放进冰箱只需要三步：打开冰箱 → 把大象放进去 → 关闭冰箱。我们的问题看上去复杂一些：打开盒子 → 取出a → 把a变成b → 把b放进盒子里 → 关上盒子。五步走可以解决吗？</p>
-<p>事实上，在大多数情况下，我们并不关心变换是如何实现的，因为变换操作与具体的<code>F</code>类型有关。好的盒子我们甚至能“隔空取物”去改变它里面的数据，而一个不好的盒子，或许根本就无法实现这样的操作。我们需要关心的是，这个盒子，能否支持这样的操作。</p>
-<p>对于一个<code>F</code>，如果我们能找到一个函数<code>map</code>，它接收<code>F[A]</code>和<code>f: A =&gt; B</code>作为参数并返回<code>F[B]</code>，并且当<code>f = a =&gt; a</code> 时，<code>map</code>函数返回值与接收的<code>F[A]</code>相同，则称这个<code>map</code>为类型<code>F</code>的函子(Functor)。</p>
-<p>通过上面的定义，我们给出<code>Functor</code>特质的实现：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Functor</span>[<span class="type">F</span>[_]] </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">map</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">B</span>): <span class="type">F</span>[<span class="type">B</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>和前文中提到的<code>Semigroup</code>与<code>Monoid</code>一样，实现了特质<code>Functor[F]</code>并不等价于得到了一个<code>F</code>的函子，还需要<code>map</code>函数满足断言：<code>assert(map(fa)(a =&gt; a) == fa)</code>。</p>
-<p>我们把所有的类型共同构成的集合称作一个范畴$C1$，每一个类型<code>x</code>对应的<code>F[x]</code>构成了另一个范畴$C2$。在范畴$C1$中，像<code>A =&gt; B</code>这样的类型转换被称作<code>A</code>到<code>B</code>类型的<em>态射</em>。可以看到，通过<code>F[_]</code>这样的类型构造器，我们可以将范畴$C1$中的<code>x</code>类型转换成范畴$C2$中的<code>F[x]</code>类型，而借助<code>Functor[F]</code>，我们可以将范畴$C1$中的<code>x =&gt; y</code>态射转换成范畴$C2$中的<code>F[x] =&gt; F[y]</code>态射。我们把这两种范畴$C1$到范畴$C2$的变换成为<em>函子变换</em>。<code>Functor</code>特质和<code>F[_]</code>的类型构造器共同组成了类型<code>F</code>上的函子（这也是为什么在部分书籍资料中，<code>Functor[F]</code>特质里还会有一个<code>A =&gt; F[A]</code>函数的原因，这个函数对应了<code>F[_]</code>的类型构造器）。</p>
-<p>下面给出<code>Functor[List]</code>与<code>Functor[Option]</code>的实现：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> listFunctor: <span class="type">Functor</span>[<span class="type">List</span>] = <span class="keyword">new</span> <span class="type">Functor</span>[<span class="type">List</span>] &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">map</span></span>[<span class="type">A</span>, <span class="type">B</span>](as: <span class="type">List</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">B</span>): <span class="type">List</span>[<span class="type">B</span>] = as map f</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">val</span> optionFunctor: <span class="type">Functor</span>[<span class="type">Option</span>] = <span class="keyword">new</span> <span class="type">Functor</span>[<span class="type">Option</span>] &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">map</span></span>[<span class="type">A</span>, <span class="type">B</span>](oa: <span class="type">Option</span>[<span class="type">A</span>])(f: (<span class="type">A</span>) =&gt; <span class="type">B</span>): <span class="type">Option</span>[<span class="type">B</span>] = oa map f</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们可以在<code>Functor</code>特质中定义一些基于<code>map</code>函数的衍生函数。这样，凡是具有<code>Functor[F]</code>实现的<code>F</code>类型数据，我们都可以用这些衍生函数来进行操作。下面给出了一个扩展了<code>distribute</code>函数的<code>Functor</code>特质：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Functor</span>[<span class="type">F</span>[_]] </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">map</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">B</span>): <span class="type">F</span>[<span class="type">B</span>] </span><br><span class="line">  <span class="comment">// 将 F[(A, B)] 类型数据分解成 F[A] 与 F[B]</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">distribute</span></span>[<span class="type">A</span>, <span class="type">B</span>](fab: <span class="type">F</span>[(<span class="type">A</span>, <span class="type">B</span>)]): (<span class="type">F</span>[<span class="type">A</span>], <span class="type">F</span>[<span class="type">B</span>]) = (map(fab)(_._1), map(fab)(_._2))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在，我们可以使用<code>distribute</code>函数来处理<code>List</code>了（当然<code>Option</code>也一样）：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line">scala&gt; <span class="keyword">val</span> pairList = <span class="type">List</span>((<span class="number">1</span>, <span class="string">"one"</span>), (<span class="number">2</span>, <span class="string">"two"</span>), (<span class="number">3</span>, <span class="string">"three"</span>))</span><br><span class="line">pairList: <span class="type">List</span>[(<span class="type">Int</span>, <span class="type">String</span>)] = <span class="type">List</span>((<span class="number">1</span>,one), (<span class="number">2</span>,two), (<span class="number">3</span>,three))</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="keyword">val</span> (intList, stringList) = listFunctor.distribute(pairList)</span><br><span class="line">intList: <span class="type">List</span>[<span class="type">Int</span>] = <span class="type">List</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">stringList: <span class="type">List</span>[<span class="type">String</span>] = <span class="type">List</span>(one, two, three)</span><br></pre></td></tr></table></figure>
-<h2 id="4-Applicative-特质"><a href="#4-Applicative-特质" class="headerlink" title="4. Applicative 特质"></a>4. Applicative 特质</h2><p>函子(Functor)为我们处理抽象的泛型数据提供了一个有力的工具。通过定义基于<code>map</code>的衍生函数，让我们得到更高层次抽象出来的组合子(combinator)。然而，函子只要求实现了一个<code>map</code>函数，基于它我们虽然能衍生出许多实用的函数，但仍然有许多操作我们难以实现。</p>
-<p>我们重新审视上一节中基于<code>map</code>得到的衍生函数<code>distribute</code>，这个函数接收了一个<code>F[(A, B)]</code>类型的参数并将其分解，返回<code>(F[A], F[B])</code>类型的数据。那么，我们能否编写一个新函数<code>combine</code>，将两个<code>F[A]</code>、<code>F[B]</code>类型的数据重新组合成<code>F[(A, B)]</code>类型的数据呢？我们先看看<code>combine</code>函数的签名：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">combine</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>]): <span class="type">F</span>[(<span class="type">A</span>, <span class="type">B</span>)]</span><br></pre></td></tr></table></figure>
-<p>事实上，如果我们手上只有<code>Functor</code>特质中提供的<code>map</code>函数作为基础，是无法实现<code>combine</code>这样的函数的。<code>map</code>只提供了<code>F[A] =&gt; (A =&gt; B) =&gt; F[B]</code>这样一对一的映射函数，而解决我们的问题，则需要<code>(F[A], F[B]) =&gt; ((A, B) =&gt; C) =&gt; F[C]</code>这样二对一的映射函数。我们称它为<code>map2</code>，签名如下：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">map2</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>])(f: (<span class="type">A</span>, <span class="type">B</span>) =&gt; <span class="type">C</span>): <span class="type">F</span>[<span class="type">C</span>]</span><br></pre></td></tr></table></figure>
-<p>基于<code>map2</code>，我们可以轻易的实现<code>combine</code>函数：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">combine</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>]): <span class="type">F</span>[(<span class="type">A</span>, <span class="type">B</span>)] = map2(fa, fb)((_, _))</span><br></pre></td></tr></table></figure>
-<p>现在，我们手上拥有了<code>map</code>和<code>map2</code>两样“原料”，它们之间有什么区别和联系呢？事实上，<code>map2</code>函数比<code>map</code>函数更为强大，因为我们可以基于<code>map2</code>函数来实现<code>map</code>，而反过来却不可以！</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">map</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">B</span>): <span class="type">F</span>[<span class="type">B</span>] = map2(fa, fa)((a, _) =&gt; f(a))</span><br></pre></td></tr></table></figure>
-<p>这里，我们给出一个继承自<code>Functor</code>特质的<code>PowerfulFunctor</code>，在这个新特质中，我们定义了<code>map2</code>函数，并用它重写了<code>map</code>函数：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">PowerfulFunctor</span>[<span class="type">F</span>[_]] <span class="keyword">extends</span> <span class="title">Functor</span>[<span class="type">F</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">map</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">B</span>): <span class="type">F</span>[<span class="type">B</span>] = map2(fa, fa)((a, _) =&gt; f(a))</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">map2</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>])(f: (<span class="type">A</span>, <span class="type">B</span>) =&gt; <span class="type">C</span>): <span class="type">F</span>[<span class="type">C</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>要实现<code>PowerfulFunctor</code>，只需要实现<code>map2</code>函数即可，对于具有<code>PowerfulFunctor</code>的类型<code>F</code>，我们除了可以进行<code>Functor[F]</code>所提供的操作外，还可以基于<code>map2</code>函数实现更多的功能（比如<code>combine</code>函数等）。</p>
-<p>可以看到，<code>PowerfulFunctor</code>特质比<code>Functor</code>特质要强大。但在实际中，仍然有许多操作，仅仅通过<code>map2</code>函数是无法实现的。</p>
-<p>重新回到我们把<code>F</code>比作盒子的假说，考虑一件最简单的事情：怎样把数据放到这个盒子里去？对<code>F</code>进行操作，要通过一个<code>A</code>类型的数据来得到一个<code>F[A]</code>类型的数据似乎是一件再普遍不过的操作了。然而就是这个简单的操作，无论是<code>Functor</code>或是更强大的<code>PowerfulFunctor</code>都无法办到。这里我们需要一个简单的打包函数，签名如下：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unit</span></span>[<span class="type">A</span>](a: <span class="type">A</span>): <span class="type">F</span>[<span class="type">A</span>]</span><br></pre></td></tr></table></figure>
-<p>现在，我们重新定义一个名为<code>Applicative</code>的特质，该特质定义了<code>unit</code>与<code>map2</code>函数，我们知道，<code>Applicative</code>是一个更为强大的<code>Functor</code>，可以看做是<code>Functor</code>的一个拓展，因此，我们让<code>Applicative</code>继承自<code>Functor</code>，并在其中实现了一个基于<code>unit</code>与<code>map2</code>函数衍生出来的函数<code>sequence</code>:</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Applicative</span>[<span class="type">F</span>[_]] <span class="keyword">extends</span> <span class="title">Functor</span>[<span class="type">F</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">map</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">B</span>): <span class="type">F</span>[<span class="type">B</span>] = map2(fa, unit(()))((a, _) =&gt; f(a))</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">unit</span></span>[<span class="type">A</span>](a: <span class="type">A</span>): <span class="type">F</span>[<span class="type">A</span>]</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">map2</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>])(f: (<span class="type">A</span>, <span class="type">B</span>) =&gt; <span class="type">C</span>): <span class="type">F</span>[<span class="type">C</span>]</span><br><span class="line">  <span class="comment">// 将 List[F[A]] 类型数据重组成 F[List[A]]</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">sequence</span></span>[<span class="type">A</span>](fas: <span class="type">List</span>[<span class="type">F</span>[<span class="type">A</span>]]): <span class="type">F</span>[<span class="type">List</span>[<span class="type">A</span>]] = fas.foldRight(unit(<span class="type">List</span>.empty[<span class="type">A</span>]))(map2(_, _)(_ :: _))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以<code>Option</code>为例，我们给出<code>Applicative[Option]</code>的实现：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> optionApplicative: <span class="type">Applicative</span>[<span class="type">Option</span>] = <span class="keyword">new</span> <span class="type">Applicative</span>[<span class="type">Option</span>] &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">unit</span></span>[<span class="type">A</span>](a: <span class="type">A</span>): <span class="type">Option</span>[<span class="type">A</span>] = <span class="type">Some</span>(a)</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">map2</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](fa: <span class="type">Option</span>[<span class="type">A</span>], fb: <span class="type">Option</span>[<span class="type">B</span>])(f: (<span class="type">A</span>, <span class="type">B</span>) =&gt; <span class="type">C</span>): <span class="type">Option</span>[<span class="type">C</span>] = <span class="keyword">for</span> &#123;</span><br><span class="line">    a &lt;- fa</span><br><span class="line">    b &lt;- fb</span><br><span class="line">  &#125; <span class="keyword">yield</span> f(a, b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>让我们在 REPL 中测试一下<code>Applicative</code>为我们提供的<code>sequence</code>函数：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line">scala&gt; <span class="keyword">val</span> optionList1 = <span class="type">List</span>(<span class="type">Some</span>(<span class="string">"Functor"</span>), <span class="type">Some</span>(<span class="string">"Applicative"</span>), <span class="type">Some</span>(<span class="string">"Monad"</span>))</span><br><span class="line">optionList1: <span class="type">List</span>[<span class="type">Some</span>[<span class="type">String</span>]] = <span class="type">List</span>(<span class="type">Some</span>(<span class="type">Functor</span>), <span class="type">Some</span>(<span class="type">Applicative</span>), <span class="type">Some</span>(<span class="type">Monad</span>))</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="keyword">val</span> optionList2 = <span class="type">List</span>(<span class="type">Some</span>(<span class="string">"Semigroup"</span>), <span class="type">Some</span>(<span class="string">"Monoid"</span>), <span class="type">None</span>)</span><br><span class="line">optionList2: <span class="type">List</span>[<span class="type">Option</span>[<span class="type">String</span>]] = <span class="type">List</span>(<span class="type">Some</span>(<span class="type">Semigroup</span>), <span class="type">Some</span>(<span class="type">Monoid</span>), <span class="type">None</span>)</span><br><span class="line"></span><br><span class="line">scala&gt; optionApplicative.sequence(optionList1)</span><br><span class="line">res0: <span class="type">Option</span>[<span class="type">List</span>[<span class="type">String</span>]] = <span class="type">Some</span>(<span class="type">List</span>(<span class="type">Functor</span>, <span class="type">Applicative</span>, <span class="type">Monad</span>))</span><br><span class="line"></span><br><span class="line">scala&gt; optionApplicative.sequence(optionList2)</span><br><span class="line">res1: <span class="type">Option</span>[<span class="type">List</span>[<span class="type">String</span>]] = <span class="type">None</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-Monad-特质"><a href="#5-Monad-特质" class="headerlink" title="5. Monad 特质"></a>5. Monad 特质</h2><p><code>Applicative</code>特质无疑比<code>Functor</code>特质为我们实现更多更强大的函数提供了更好的基础，然而它依旧有那么一点缺陷。</p>
-<p>假设我们有一个被<code>F</code>类型包装的数据<code>fa: F[A]</code>，一个函数<code>f: A =&gt; F[B]</code>，如果执行<code>map(fa)(f)</code>操作，我们将得到一个<code>F[F[A]]</code>类型的对象。在很多情况下，这个结果或许并不是我们想要的，比如一个<code>Option[Option[A]]</code>。我们不想一层层的去打开这个盒子然后看看里面到底装了什么，只想要一个单层的<code>Option[A]</code>。</p>
-<p>在这种场景下，我们需要这样的一个函数<code>flatMap</code>，它的签名如下：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">flatMap</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">B</span>]): <span class="type">F</span>[<span class="type">B</span>]</span><br></pre></td></tr></table></figure>
-<p>我们已经在<code>Applicative</code>特质定义了两个函数<code>unit</code>和<code>map2</code>，现在是不是意味着我们需要再往里面添砖加瓦，新增一个<code>flatMap</code>呢？其实我们可以看到，有了<code>flatMap</code>之后，<code>map2</code>函数已经是多余的了，我们可以用<code>unit</code>函数与<code>flatMap</code>函数来实现<code>map2</code>:</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">map2</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>])(f: (<span class="type">A</span>, <span class="type">B</span>) =&gt; <span class="type">C</span>): <span class="type">F</span>[<span class="type">C</span>] = flatMap(fa)(a =&gt; flatMap(fb)(b =&gt; unit(f(a, b))))</span><br></pre></td></tr></table></figure>
-<p>现在，我们可以重新定义一个特质，它继承自<code>Applicative</code>特质，定义了一个新的<code>flatMap</code>函数，并且实现了<code>Applicative</code>特质中的<code>map2</code>函数。这个特质，就是<code>Monad</code>，下面给出了<code>Monad</code>特质的实现，并在其中添加了一个基于<code>flatMap</code>衍生的函数<code>compose</code>：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Monad</span>[<span class="type">F</span>[_]] <span class="keyword">extends</span> <span class="title">Applicative</span>[<span class="type">F</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">unit</span></span>[<span class="type">A</span>](a: <span class="type">A</span>): <span class="type">F</span>[<span class="type">A</span>]</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">map2</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>])(f: (<span class="type">A</span>, <span class="type">B</span>) =&gt; <span class="type">C</span>): <span class="type">F</span>[<span class="type">C</span>] = flatMap(fa)(a =&gt; flatMap(fb)(b =&gt; unit(f(a, b))))</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">flatMap</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">B</span>]): <span class="type">F</span>[<span class="type">B</span>]</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">compose</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](f: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">B</span>], g: <span class="type">B</span> =&gt; <span class="type">F</span>[<span class="type">C</span>]): <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">C</span>] = a =&gt; flatMap(f(a))(g)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>同样的，我们也可以实现一个<code>Monad[List]</code></p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> listMonad: <span class="type">Monad</span>[<span class="type">List</span>] = <span class="keyword">new</span> <span class="type">Monad</span>[<span class="type">List</span>] &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">unit</span></span>[<span class="type">A</span>](a: <span class="type">A</span>): <span class="type">List</span>[<span class="type">A</span>] = <span class="type">List</span>(a)</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">flatMap</span></span>[<span class="type">A</span>, <span class="type">B</span>](as: <span class="type">List</span>[<span class="type">A</span>])(f: (<span class="type">A</span>) =&gt; <span class="type">List</span>[<span class="type">B</span>]): <span class="type">List</span>[<span class="type">B</span>] = as flatMap f</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在 REPL 中测试<code>Monad</code>提供的<code>compose</code>函数：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line">scala&gt; <span class="keyword">val</span> f: <span class="type">String</span> =&gt; <span class="type">List</span>[<span class="type">Int</span>] = s =&gt; s.toList.map(_.toString.toInt)</span><br><span class="line">f: <span class="type">String</span> =&gt; <span class="type">List</span>[<span class="type">Int</span>] = &lt;function1&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="keyword">val</span> g: <span class="type">Int</span> =&gt; <span class="type">List</span>[<span class="type">Int</span>] = n =&gt; <span class="type">List</span>.fill(n)(n)</span><br><span class="line">g: <span class="type">Int</span> =&gt; <span class="type">List</span>[<span class="type">Int</span>] = &lt;function1&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="keyword">val</span> h = listMonad.compose(f, g)</span><br><span class="line">h: <span class="type">String</span> =&gt; <span class="type">List</span>[<span class="type">Int</span>] = &lt;function1&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; h(<span class="string">"123"</span>)</span><br><span class="line">res1: <span class="type">List</span>[<span class="type">Int</span>] = <span class="type">List</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="6-Monad-与-Monoid"><a href="#6-Monad-与-Monoid" class="headerlink" title="6. Monad 与 Monoid"></a>6. Monad 与 Monoid</h2><p>早在第1、2节中，我们就介绍过幺半群的概念并给出了一个<code>Monoid</code>特质。相信每一位FP的初学者都会心存疑问：Monad 和 Monoid，这两者之间到底有什么联系？它们的名字如此相似，难道只是巧合吗？</p>
-<p>通过前面的介绍，我们知道，对于<code>F</code>类型而言，Monad 是由定义在<code>F</code>上的两个基本函数<code>unit</code>与<code>flatMap</code>共同组成的。</p>
-<p>上一节中，我们在<code>Monad</code>特质里基于<code>flatMap</code>实现了一个<code>compose</code>函数。仔细研究一下<code>compose</code>就会发现，我们也可以通过<code>compose</code>函数来实现<code>flatMap</code>函数：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">flatMap</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">B</span>]): <span class="type">F</span>[<span class="type">B</span>] = compose((_ : <span class="type">Unit</span>) =&gt; fa, f)(())</span><br></pre></td></tr></table></figure>
-<p>这意味着，<code>compose</code>函数与<code>flatMap</code>函数是等价的。我们完全可以用<code>compose</code>函数来取代<code>faltMap</code>函数，并基于<code>unit</code>函数与<code>compose</code>函数衍生出<code>flatMap</code>、<code>map2</code>、<code>map</code>以及更多其它的函数。我们得到一个 Monad 的等价定义，这里给出<code>MonadEq</code>特质的实现：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">MonadEq</span>[<span class="type">F</span>[_]] <span class="keyword">extends</span> <span class="title">Applicative</span>[<span class="type">F</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">unit</span></span>[<span class="type">A</span>](a: <span class="type">A</span>): <span class="type">F</span>[<span class="type">A</span>]</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">map2</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](fa: <span class="type">F</span>[<span class="type">A</span>], fb: <span class="type">F</span>[<span class="type">B</span>])(f: (<span class="type">A</span>, <span class="type">B</span>) =&gt; <span class="type">C</span>): <span class="type">F</span>[<span class="type">C</span>] = flatMap(fa)(a =&gt; flatMap(fb)(b =&gt; unit(f(a, b))))</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">compose</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](f: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">B</span>], g: <span class="type">B</span> =&gt; <span class="type">F</span>[<span class="type">C</span>]): <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">C</span>]</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">flatMap</span></span>[<span class="type">A</span>, <span class="type">B</span>](fa: <span class="type">F</span>[<span class="type">A</span>])(f: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">B</span>]): <span class="type">F</span>[<span class="type">B</span>] = compose((_ : <span class="type">Unit</span>) =&gt; fa, f)(())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看到，<code>MonadEq</code>与<code>Monad</code>特质具有同样强大的功能。所有我们通过<code>Monad</code>能完成的操作，都可以通过<code>MonadEq</code>来实现。</p>
-<p>我们把<code>MonadEq</code>特质中多余的衍生函数去掉，不再令其继承自<code>Applicative</code>特质，并将<code>unit</code>函数与<code>compose</code>函数稍加变形，得到一个新的特质<code>Mon</code>如下：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Mon</span>[<span class="type">F</span>[_]] </span>&#123;</span><br><span class="line">  <span class="keyword">val</span> unit[<span class="type">A</span>]: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">A</span>]</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">compose</span></span>[<span class="type">A</span>, <span class="type">B</span>, <span class="type">C</span>](f: <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">B</span>], g: <span class="type">B</span> =&gt; <span class="type">F</span>[<span class="type">C</span>]): <span class="type">A</span> =&gt; <span class="type">F</span>[<span class="type">C</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>是不是感觉到很眼熟？再看看我们的<code>Monoid</code>特质（为了方便比较，这里不再让<code>Monoid</code>特质继承自<code>Semigroup</code>特质）：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Monoid</span>[<span class="type">A</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">val</span> zero: <span class="type">A</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">op</span></span>(a1: <span class="type">A</span>, a2: <span class="type">A</span>): <span class="type">A</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看到，<code>Mon</code>中的<code>unit</code>和<code>compose</code>函数极好的吻合了<code>Monoid</code>中的<code>zero</code>与<code>op</code>！</p>
-<p>现在我们再重新理解 Wadler 说过的那句关于 Monad 的定义：</p>
-<blockquote>
-<p>“Monad 不过是一个自函子范畴上的幺半群而已，有什么问题吗？”</p>
-</blockquote>
-<p><code>A =&gt; F[B]</code>正是一个从范畴$C1$到范畴$C2$的函子变换。当我们把这样的函子变换构成的集合看做一个新的范畴$C$时，可以非常明显的看出来，<code>Monad[F]</code>就是范畴$C$上的幺半群！</p>
-<p>把 <code>Monad[F]</code> 看成以一个幺半群$M = (S, ⊙, e)$，在这个幺半群中，$S$为所有形如<code>A =&gt; F[B]</code>的函数构成的集合；二元运算$⊙$为<code>compose</code>函数；单位元$e$就是<code>zero</code>。<br>此时，幺半群的二元运算结合律与单位元的不变性表现为以下断言：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line">assert(m.compose(m.compose(f, g), h) == m.compose(f, m.compose(g, h)))</span><br><span class="line">assert(m.compose(f, m.unit) == f)</span><br><span class="line">assert(m.compose(m.unit, f) == f)</span><br></pre></td></tr></table></figure>
-<p>理解了这些，关于函子(functor)与单子(monad)的概念，我们是不是也能有自信的说出一句：“What’s the problem?”</p>
-
       
     </div>
     
@@ -448,6 +252,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/08/monad_in_deep/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -492,44 +300,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在我的上一篇文章<a href="http://yasenia.github.io/2016/01/25/build-blog-with-hexo-01/">《使用 hexo 搭建个人博客 01》</a>中，介绍了使用 hexo 搭建博客的基本知识。本篇将主要介绍如何部署 hexo 到 Github Pages 服务，以及如何更换 hexo 的主题。</p>
-<hr>
-<h1 id="6-部署-blog-为-Github-Pages"><a href="#6-部署-blog-为-Github-Pages" class="headerlink" title="6. 部署 blog 为 Github Pages"></a>6. 部署 blog 为 Github Pages</h1><p><a href="https://github.com" target="_blank" rel="external">github</a> 是目前全球最大的代码托管仓库。Github Pages 是由 github 提供的一个免费的静态页面托管服务，只需要我们拥有一个 github 账号即可。<br>要将 hexo 生成的静态网页部署为 Github Pages，详细步骤如下：</p>
-<ol>
-<li>在 github 上创建 git 仓库<br>使用用户名为 <code>${username}</code> 的 github 账号，创建一个 repository，命名为 <code>${username}.github.io</code>。此处仓库名必须为该格式，否则无法使用 Github Pages 服务。</li>
-<li><p>修改本地配置<br>使用 vim 或其他编辑器编辑 <code>~/blog</code> 目录下的 <code>_config.yml</code> 文件。在 shell 中执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ vim _config.yml</span><br></pre></td></tr></table></figure>
-<p>修改配置文件 deploy 相关配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ... other configs</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">    type:</span> git</span><br><span class="line"><span class="attr">    repository:</span> git@github.com:$&#123;username&#125;/$&#123;username&#125;.github.io.git</span><br><span class="line"><span class="attr">    branch:</span> master</span><br></pre></td></tr></table></figure>
-<p>这里的 repository url 可以在 github 仓库页面复制（本文使用的是ssh方式）。另外需要注意，yaml 配置文件对格式有严格的要求，必须保证缩进，且 <code>:</code> 后一定要加上空格，否则配置可能失效。  </p>
-</li>
-<li><p>生成 ssh 密钥对<br>在 shell 中执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ <span class="built_in">cd</span> ~</span><br><span class="line">~$ ssh-keygen -t rsa -C <span class="variable">$&#123;email&#125;</span></span><br></pre></td></tr></table></figure>
-<p>此处 <code>${email}</code> 建议使用你的真实可用邮箱。接下来终端会分别提示你输入生成密钥目标文件夹，密钥使用密码以及确认密码。可以直接点击 <code>Enter</code> 使用缺省值。<br>执行成功后，缺省会生成一个 <code>~/.ssh</code> 目录，里面包含了 <code>id_rsa</code> 与 <code>id_rsa.pub</code> 两个文件，分别保存了 ssh 私钥与公钥。</p>
-</li>
-<li>添加 ssh 公钥到 github<br>用任意文本编辑器打开 <code>~/.ssh/id_rsa.pub</code> 文件，拷贝里面的文本内容。登入 github，进入 <code>${username}.github.io</code> 仓库的 “Settings”，切换到 “Deploy keys” 选项卡，点击 “add deploy key” 按钮，此处 “title”     栏可以任意填写，”key” 栏粘贴本机生成的 ssh 公钥内容，勾选 “Allow write access” 选项，保存即可。</li>
-<li><p>安装 hexo-deployer-git 插件<br>在 shell 中执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~$ <span class="built_in">cd</span> blog</span><br><span class="line">~/blog$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>生成并部署 hexo 静态页面<br>在 shell 中执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ hexo generate</span><br><span class="line">~/blog$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>这两条指令也可以等价简写为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ hexo g <span class="_">-d</span></span><br></pre></td></tr></table></figure>
-<p>成功执行后，用浏览器访问 <code>http://${username}.github.io</code>，就可以看到托管到 Github Pages 上的博客了。</p>
-</li>
-</ol>
-<hr>
-<h1 id="7-选择一款适合你的主题"><a href="#7-选择一款适合你的主题" class="headerlink" title="7. 选择一款适合你的主题"></a>7. 选择一款适合你的主题</h1><p>hexo 默认的主题样式是 landscape，也许你希望使用更多样、更个性化的主题风格。在 github 上有许多开源的 hexo 主题，你只需要把它们克隆到 <code>~/blog/themes</code> 目录下，并在 <code>~/blog/_config.yml</code> 的 <code>theme</code> 属性中设置你希望使用的主题，然后重新生成页面部署即可。<br>这里推荐几个在 github 上 star 数较高的主题：</p>
-<ul>
-<li><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a></li>
-<li><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a></li>
-<li><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">Tranquilpeak</a></li>
-<li><a href="https://github.com/orderedlist/modernist" target="_blank" rel="external">Modernist</a></li>
-<li><a href="https://github.com/xiangming/landscape-plus" target="_blank" rel="external">Landscape plus</a></li>
-</ul>
-<p>当然，如果你自己就是一名优秀的前端工程师，甚至可以自己定制一份属于自己独一无二的 hexo-theme，你还可以把你的作品开源到 github 上供更多的 hexo 用户使用与学习。</p>
-<hr>
-<h1 id="8-开始你的博客之旅"><a href="#8-开始你的博客之旅" class="headerlink" title="8. 开始你的博客之旅"></a>8. 开始你的博客之旅</h1><p>这里已经介绍了最基本的 hexo 知识与配置。希望能为每一个想要拥有自己博客的朋友们提供一些参考和帮助。<br>开始属于你的博客之旅吧！</p>
-
       
     </div>
     
@@ -542,6 +312,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/25/build-blog-with-hexo-02/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -585,37 +359,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-hexo-概览"><a href="#1-hexo-概览" class="headerlink" title="1. hexo 概览"></a>1. hexo 概览</h1><p>根据 <a href="https://hexo.io" target="_blank" rel="external">hexo</a> 官方的描述，它是一个快速、简洁且高效的博客框架。</p>
-<ul>
-<li>hexo 是基于 <a href="https://nodejs.org/en/" target="_blank" rel="external">nodeJs</a> 生成网页的，这使得它的渲染速度相比同类型的静态博客框架 <a href="http://jekyll.bootcss.com" target="_blank" rel="external">jekyll</a> 等要迅速的多（后者基于 <a href="http://www.ruby-lang.org/en/" target="_blank" rel="external">ruby</a> 进行页面生成）。</li>
-<li>hexo 良好的集成了 <a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a> 。这使得用户可以轻松的将自己的博客部署到 <a href="https://github.com" target="_blank" rel="external">github</a> 之上，享受免费、稳定且无限流量的服务，而不需要搭建自己的服务器。</li>
-<li>hexo 提供的完整的 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a> <a href="https://github.com/othree/markdown-syntax-zhtw" target="_blank" rel="external">语法</a>支持，这使得用户可以更专注于编写文章的内容而非把精力花费在调整修改令人头疼文本格式。</li>
-<li>hexo 支持自定义主题，你也可以在 github 上找到许多优秀的开源的 hexo 主题应用于你的博客之中。</li>
-</ul>
-<hr>
-<h1 id="2-环境配置"><a href="#2-环境配置" class="headerlink" title="2. 环境配置"></a>2. 环境配置</h1><ul>
-<li>nodeJs<br>由于 hexo 是采用 nodeJs 来生成静态网页的，因此想要使用 hexo，nodeJs 是必需的。登入 nodeJs 官网，你可以根据自己的系统，选择合适的版本进行安装。</li>
-<li>git<br>如果你希望将自己博客中的文章部署到 github 上，那么 <a href="http://git-scm.com/download/" target="_blank" rel="external">git</a> 是必不可少的。通常而言，OS X 与绝大多数 Linux 发行版都内置了 git。如果你的机器是 Windows 系统，请访问官网下载安装最新版本的 git，并将 <code>$GIT_HOME/bin</code> 路径添加到系统的环境变量当中。</li>
-</ul>
-<hr>
-<h1 id="3-安装-hexo"><a href="#3-安装-hexo" class="headerlink" title="3. 安装 hexo"></a>3. 安装 hexo</h1><p>nodeJs 安装成功后，我们可以很方便的通过 node 包管理器（npm）来下载安装 hexo 及其所依赖的插件。<br>在 shell 中执行指令：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
-<p>上述指令执行成功后，hexo 客户端程序就已经在你的机器上成功安装了。</p>
-<hr>
-<h1 id="4-初始化你的-blog"><a href="#4-初始化你的-blog" class="headerlink" title="4. 初始化你的 blog"></a>4. 初始化你的 blog</h1><p>在 shell 中执行指令：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~$ hexo init blog</span><br></pre></td></tr></table></figure></p>
-<p>hexo 会在当前目录下生成一个名为 <code>blog</code> 目录（当然你也可以换成其它你喜欢的名称），此博客相关的配置、主题与文本内容等都在此目录下由 hexo 进行管理。<br>接下来，在 shell 中执行:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~$ <span class="built_in">cd</span> blog</span><br><span class="line">~/blog$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>这会将你的工作目录切换到 <code>~/blog</code> 之下，并根据该目录下的 <code>package.json</code> 配置安装 hexo 所需的依赖包。</p>
-<p>通常，hexo 会自动生成一篇名为 Hello World 的缺省博客，它的位置为：<br> <code>~/blog/source/_posts/hello-world.md</code><br>在 shell 中执行以下两条指令：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ hexo generate</span><br><span class="line">~/blog$ hexo server</span><br></pre></td></tr></table></figure></p>
-<p>第一条指令使 hexo 根据 <code>~/blog</code> 目录中的配置以及文本内容生成相应的网页文件。你可以在 <code>~/blog/public</code> 目录下看到生成的 html、css等静态文件。第二条指令则是在本机的 <code>4000</code> 端口启动 hexo 服务。<br>成功执行上述指令后，打开浏览器，访问 <code>localhost:4000</code>，如果你能看到缺省情况下的 hexo 博客页面。则说明你的 hexo 博客已经搭建成功了。如果你希望退出服务，输入 <code>ctrl + C</code> 即可。</p>
-<hr>
-<h1 id="5-创建和编辑文章"><a href="#5-创建和编辑文章" class="headerlink" title="5. 创建和编辑文章"></a>5. 创建和编辑文章</h1><p>当你完成上述步骤后，本地的 hexo 已经基本搭建完成了。<br>现在，我们希望新建一篇名为 <code>Hello Hexo</code> 的文章。在 shell 中执行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ hexo new <span class="string">"Hello Hexo"</span></span><br></pre></td></tr></table></figure></p>
-<p>这样，我们就完成了文章的新建，我们可以用 vim 或其他编辑器打开位于 <code>~/blog/source/_posts</code> 目录中的 <code>Hello-Hexo.md</code> 文件。在 shell 中执行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ vim <span class="built_in">source</span>/_posts/Hello-Hexo.md</span><br></pre></td></tr></table></figure></p>
-<p>打开文章后，我们可以看到如下内容：</p>
-<blockquote>
-<p>-–<br>title: Hello Hexo<br>date: 2016-01-25 09:12:21<br>tags:<br>-–</p>
-</blockquote>
-<p>在两个 <code>---</code> 之间的是 yaml 格式的文章配置，其中可以指定文章标题、日期、标签等。<br>在第二个 <code>---</code> 之后，我们可以使用 Markdown 语法编写这篇博客正文。<br>文章编写完成后，重新生成网页并启动 hexo 服务，在 shell 中执行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog$ hexo generate</span><br><span class="line">~/blog$ hexo server</span><br></pre></td></tr></table></figure></p>
-<p>现在，重新访问 <code>localhost:4000</code>，是不是已经看到你的新博客了呢？</p>
-
+        <h1 id="1-hexo-概览"><a href="#1-hexo-概览" class="headerlink" title="1. hexo 概览"></a>1. hexo 概览</h1><p>根据 <a href="https://hexo.io">hexo</a> 官方的描述，它是一个快速、简洁且高效的博客框架。</p>
       
     </div>
     
@@ -628,6 +372,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/25/build-blog-with-hexo-01/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

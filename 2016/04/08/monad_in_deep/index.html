@@ -7,27 +7,18 @@
   <title>深入理解 Monad | Pineislet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在函数式编程中，Monad 是一个重要的抽象概念。它为我们提供了一个更高的抽象层次来处理多态类型，在编码实践中有着广泛的应用。
-然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。
-关于 Monad，有这样一句广为流传的定义：
-
-A monad is just a">
+然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解 Monad">
 <meta property="og:url" content="http://yasenia.github.io/2016/04/08/monad_in_deep/index.html">
 <meta property="og:site_name" content="Pineislet">
 <meta property="og:description" content="在函数式编程中，Monad 是一个重要的抽象概念。它为我们提供了一个更高的抽象层次来处理多态类型，在编码实践中有着广泛的应用。
-然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。
-关于 Monad，有这样一句广为流传的定义：
-
-A monad is just a">
-<meta property="og:updated_time" content="2016-04-25T15:55:46.000Z">
+然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。">
+<meta property="og:updated_time" content="2016-05-06T00:48:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解 Monad">
 <meta name="twitter:description" content="在函数式编程中，Monad 是一个重要的抽象概念。它为我们提供了一个更高的抽象层次来处理多态类型，在编码实践中有着广泛的应用。
-然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。
-关于 Monad，有这样一句广为流传的定义：
-
-A monad is just a">
+然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。">
   
     <link rel="alternative" href="/atom.xml" title="Pineislet" type="application/atom+xml">
   
@@ -202,6 +193,7 @@ A monad is just a">
       
         <p>在函数式编程中，Monad 是一个重要的抽象概念。它为我们提供了一个更高的抽象层次来处理多态类型，在编码实践中有着广泛的应用。</p>
 <p>然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。</p>
+<a id="more"></a>
 <p>关于 Monad，有这样一句广为流传的定义：</p>
 <blockquote>
 <p><em>A monad is just a monoid in the category of endofunctors, what’s the problem?</em></p>
