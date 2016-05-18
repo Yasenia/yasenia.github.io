@@ -6,10 +6,14 @@ tags: [hexo, blog, github]
 
 # 1. hexo 概览
 根据 [hexo](https://hexo.io) 官方的描述，它是一个快速、简洁且高效的博客框架。
+
+<!-- more -->
+
 * hexo 是基于 [nodeJs](https://nodejs.org/en/) 生成网页的，这使得它的渲染速度相比同类型的静态博客框架 [jekyll](http://jekyll.bootcss.com) 等要迅速的多（后者基于 [ruby](http://www.ruby-lang.org/en/) 进行页面生成）。
 * hexo 良好的集成了 [Github Pages](https://pages.github.com) 。这使得用户可以轻松的将自己的博客部署到 [github](https://github.com) 之上，享受免费、稳定且无限流量的服务，而不需要搭建自己的服务器。
 * hexo 提供的完整的 [Markdown](http://daringfireball.net/projects/markdown/) [语法](https://github.com/othree/markdown-syntax-zhtw)支持，这使得用户可以更专注于编写文章的内容而非把精力花费在调整修改令人头疼文本格式。
 * hexo 支持自定义主题，你也可以在 github 上找到许多优秀的开源的 hexo 主题应用于你的博客之中。
+
 
 ---
 

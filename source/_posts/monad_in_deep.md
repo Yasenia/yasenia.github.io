@@ -9,6 +9,8 @@ tags: [fp, monad, scala]
 
 然而，Monad 到底是什么，它能做什么，如何使用它？网上相关介绍的文章（尤其是中文）很少，而且其中大部分都是泛泛而谈，少部分又讳莫如深。这使得初次接触这个领域的人面临一个很高的学习门槛。
 
+<!-- more -->
+
 关于 Monad，有这样一句广为流传的定义：
 
 > *A monad is just a monoid in the category of endofunctors, what's the problem?*

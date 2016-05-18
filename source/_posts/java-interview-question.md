@@ -1,12 +1,14 @@
 ---
-title: 原创 Java 面试题
+title: Java 笔试题一套
 date: 2016-05-05 16:14:27
 tags: [java, interview]
 ---
 
-最近项目组招新人，让我帮忙出了套面试题。  
+最近项目组招新人（一年经验），让我帮忙出了套笔试题。要求题目主要考察Java基础知识。  
 这套题目内容覆盖了继承、异常、线程、同步锁、正则表达式、集合类、数据结构、简单算法以及少量Java8新特性。  
 虽然东西都很基础，但想全部答对还是有一定的难度的。
+
+<!-- more -->
 
 ## 选择题
 
@@ -105,62 +107,60 @@ tags: [java, interview]
 
 ## 编程题
 
-1. 实现如下签名的方法:  
-	
-	```java
-	public static int fact(int n);
-	``` 
-	
-	方法返回n的阶乘，要求分别用迭代与递归两种方式实现该方法。如果可能，请将递归优化为尾递归实现。  
+1.  实现如下签名的方法:  
 
-	测试用例：
-	
+    `public static int fact(int n);`
+
+    方法返回n的阶乘，要求分别用迭代与递归两种方式实现该方法。如果可能，请将递归优化为尾递归实现。  
+
+    测试用例：
+
 	```java
 	assert fact(5) == 120;
 	assert fact(6) == 720;
 	```
 
-2. 实现一个简化版的`List<E>`类，需要实现以下方法：  
+2.  实现一个简化版的`List<E>`类，需要实现以下方法：  
 
-	```java
-	int size();						// 返回列表长度
-	boolean isEmpty();				// 判断列表是否为空
-	boolean contains(Object o);		// 判断列表是否包含元素 o
-	boolean add(E e);				// 向列表中添加元素 e，返回操作是否成功
-	E remove(int index);			// 移除下标为 index 的元素，并返回该元素
-	E get(int index);				// 获取下标为 index 的元素
-	E set(int index, E e);			// 将下标为 index 的元素设为 e，并返回原位置的元素
-	```
+    ```java
+    int size();                  // 返回列表长度
+    boolean isEmpty();           // 判断列表是否为空
+    boolean contains(Object o);  // 判断列表是否包含元素 o
+    boolean add(E e);            // 向列表中添加元素 e，返回操作是否成功
+    E remove(int index);         // 移除下标为 index 的元素，并返回该元素
+    E get(int index);            // 获取下标为 index 的元素
+    E set(int index, E e);       // 将下标为 index 的元素设为 e，并返回原位置的元素
+    ```
 
-	要求：不允许使用 Java 自带的类库，底层用数组实现。可以向 List 中无限制添加数据。
+    要求：不允许使用 Java 自带的类库，底层用数组实现。可以向 List 中无限制添加数据。
 
-3. 实现如下签名的方法:  
-   
-   ```java
-   public static List<int[]> permutations(int[] src);
-   ```
-   要求输入一个数组,输出这个数组中元素的全排列构成的列表
-   
-   测试用例：
-	
-	```java
-	int[] src = new int[]{1, 2, 3};
-	List<int[]> result = permutations(src);
-	result.forEach(arr -> {
-		for (int i : arr) {
-			System.out.print(i + " ")
-		}
-		System.out.println();
-	});
-	assert result.size() == 6;
-	// 1	2	3	
-	// 2	1	3	
-	// 2	3	1	
-	// 1	3	2	
-	// 3	1	2	
-	// 3	2	1
-	```
-	
+3.  实现如下签名的方法:  
+    
+    `public static List<int[]> permutations(int[] src);`
+
+    要求输入一个数组,输出这个数组中元素的全排列构成的列表
+  
+    测试用例：
+
+    ```java
+    int[] src = new int[]{1, 2, 3};
+    List<int[]> result = permutations(src);
+    assert result.size() == 6;
+    result.forEach(arr -> {
+        for (int i : arr) {
+            System.out.print(i + " ")
+        }
+        System.out.println();
+    });
+    // 1 2 3
+    // 2 1 3
+    // 2 3 1
+    // 1 3 2
+    // 3 1 2
+    // 3 2 1
+    ```
+
+<!--
 ## 解答
 ### 选择题:  
 1~4: CBAB
@@ -176,3 +176,4 @@ tags: [java, interview]
 	   
 ### 编程题:  
 略
+-->

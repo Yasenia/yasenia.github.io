@@ -6,6 +6,8 @@ tags: [hexo, blog, github]
 
 在我的上一篇文章[《使用 hexo 搭建个人博客 01》](http://yasenia.github.io/2016/01/25/build-blog-with-hexo-01/)中，介绍了使用 hexo 搭建博客的基本知识。本篇将主要介绍如何部署 hexo 到 Github Pages 服务，以及如何更换 hexo 的主题。
 
+<!-- more -->
+
 ---
 
 # 6. 部署 blog 为 Github Pages
