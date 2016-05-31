@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yasenia.github.io/2016/05/05/java-interview-question/index.html">
 <meta property="og:site_name" content="Pineislet">
 <meta property="og:description" content="最近项目组招新人（一年经验），让我帮忙出了套笔试题。要求题目主要考察Java基础知识。这套题目内容覆盖了继承、异常、线程、同步锁、正则表达式、集合类、数据结构、简单算法以及少量Java8新特性。虽然东西都很基础，但想全部答对还是有一定的难度的。">
-<meta property="og:updated_time" content="2016-05-12T03:11:44.000Z">
+<meta property="og:updated_time" content="2016-05-31T10:27:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 笔试题一套">
 <meta name="twitter:description" content="最近项目组招新人（一年经验），让我帮忙出了套笔试题。要求题目主要考察Java基础知识。这套题目内容覆盖了继承、异常、线程、同步锁、正则表达式、集合类、数据结构、简单算法以及少量Java8新特性。虽然东西都很基础，但想全部答对还是有一定的难度的。">
@@ -288,12 +288,7 @@
 <h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h2><ol>
 <li><p>以下程序将输出________。<br> <code>IntStream.range(0, 10).filter(i -&gt; i % 2 != 0).map(i -&gt; i * 2).sum();</code>  </p>
 </li>
-<li><p>现有<code>listA</code>与<code>listB</code>两个<code>List&lt;String&gt;</code>类型的列表，要得到所有在<code>listA</code>且不在<code>listB</code>中的字符串的集合，应该调用<code>listA.</code>________。</p>
-</li>
 <li><p>对于<code>List</code>的而言，<code>ArrayList</code>适用于________操作较频繁的场景，<code>LinkedList</code>适用于________操作较频繁的场景。</p>
-</li>
-<li><p>以下程序将输出________________________。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"静态代码块: a = "</span> + a);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"初始化代码块: b = "</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"构造方法: b = "</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Foo();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><ol>
