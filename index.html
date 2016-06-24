@@ -233,194 +233,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/16/sum_of_natural_number/" itemprop="url">
-                  全体自然数之和究竟是多少？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-16T22:33:27+08:00" content="2016-06-16">
-              2016-06-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这片文章最早是我在2013年发表于人人上，后来在知乎上用来回答<a href="https://www.zhihu.com/question/36864440/answer/69853980" target="_blank" rel="external">1-2+3-4+5…… 是否等于 1/4？ 1+2+3+4+5+6+7….是否等于 -1/12 ？</a>这个问题。</p>
-<p>自从搭了博客，也没有发过什么干货技术文章，难免让这里显得有些冷清。想了想，便干脆把此文搬运到这里。</p>
-<p>以下是正文分割线</p>
-<hr>
-<h2 id="惊人的等式"><a href="#惊人的等式" class="headerlink" title="惊人的等式"></a>惊人的等式</h2><p>就在前几天吧，Numberphile的两期节目在人人上很是火了一阵。缘由无非是这两个视频给出了两个看似匪夷所思的等式。<br>第一期告诉我们格兰迪(Grandi)级数等于1/2。</p>
-<p>$\sum_{n=0}^{+\infty}{(-1)^{n}}=\frac{1}{2}$</p>
-<p>第二期的结论似乎更惊悚，全体自然数之和等于-1/12！</p>
-<p>$\sum_{n=0}^{+\infty}{n}=-\frac{1}{12}$ </p>
-<p>怎么可能？That is impossible！相信这是大多数人的第一反应。<br>然而视频中甚至拿出了Joseph Polchinski所著的《STRING THEORY》一书为证，用来告诉我们这个式子的结论着实广泛应用于物理相关领域。虽然我不懂物理，但这本书看上去不太像是一个民间科学家自己在家倒腾然后所著的，那么姑且可以把我们的态度从不屑一顾上升到将信将疑吧~<br>现在，不妨从头梳理一遍，让我们看一看，这期间究竟隐藏着怎样的数学内幕。</p>
-<h2 id="看似简洁易懂的推导"><a href="#看似简洁易懂的推导" class="headerlink" title="看似简洁易懂的推导"></a>看似简洁易懂的推导</h2><p>姑且先把两个结论正确与否的讨论放下，我们先来看看视频里是怎样让我们相信这两个等式是正确的。<br>首先是格兰迪级数S1：</p>
-<p>$S<em>{1}=\sum</em>{n=0}^{+\infty }{(-1)^{n}}=1-1+1-1+1…$</p>
-<p>$\Rightarrow 1-S<em>{1}=1-(1-1+1-1+…)=1-1+1-1+1-1+…=S</em>{1}$</p>
-<p>$\Rightarrow S_{1}=\frac{1}{2}$</p>
-<p>过程一目了然。接下来是全体自然数之和，可能稍微麻烦一点：<br>证明分为两个步骤，第一步先求了一个中间级数S2的值</p>
-<p>$S<em>{2}=\sum</em>{n=0}^{+\infty}{(-1)^{n}\cdot (n+1)}=1-2+3-4+5-6…$</p>
-<p>$\begin{split}<br>\Rightarrow 2S<em>{2}&amp;=1-2+3-4+5-6…\<br>&amp;+0+1-2+3+4+5…\<br>&amp;=1-1+1-1+1-1…=S</em>{1}<br>\end{split}$</p>
-<p>$\Rightarrow S<em>{2}=\frac{1}{2}S</em>{1}=\frac{1}{4}$</p>
-<p>第二步便是我们需要的结果</p>
-<p>$S=\sum_{n=0}^{+\infty}{n}=1+2+3+4+5+6…$</p>
-<p>$\begin{split}<br>\Rightarrow S-S_{2}&amp;=1+2+3+4+5+6…\<br>&amp;-(1-2+3-4+5-6…)\<br>&amp;=0+4+0+8+0+12…=4(1+2+3…)=4S<br>\end{split}$</p>
-<p>$\Rightarrow S=-\frac{1}{3}S_{2}=-\frac{1}{12}$</p>
-<p>看上去轻松愉快的证明，小学生都能看懂。简直是无懈可击……吗？</p>
-<h2 id="非民科们的抨击"><a href="#非民科们的抨击" class="headerlink" title="非民科们的抨击"></a>非民科们的抨击</h2><p>没错，这是一个小学生都能看的懂的证明，不过我相信一个中学文化水平的人就已经能察觉到充斥在证明过程中的别扭感了。当然，如果你是一个大学生，并且在微积分的课堂上还算听过课，那么一定能一针见血的指出视频中这些证明的一个巨大的bug：<br>在无穷级数中，只有绝对收敛的无穷级数才可以重新排列各项而不改变收敛值。也就是说，对于非绝对收敛的无穷级数，不能任意更改求和次序！这也就是黎曼(Riemann)级数定理，也叫黎曼重排定理。<br>可以说，视频中的证明过程充斥着民科的味道。从S1=1/2的证明开始，无时不刻不在肆意改变着级数求和的次序，用一些看起来精巧的“移项变号”、“错位相减”的手法，得到了一个似乎正确的让人信服的结果。可惜的是，从严谨的数学角度上看，上面所有的证明过程，完全不成立。<br>确实，各种论坛里最常见的对待该问题的论调大致到此为止：格兰迪级数是一个发散的级数，不能求和，从S1=1/2开始，所有的论证都是错的，后面的没必要看了。<br>看上去好像是一群国外的深井冰在试图糊弄着愚笨的欧洲人民，可惜流传到中国，中国学生的数学底蕴远远超乎那群英国佬的想象，一眼看破真相。民科再一次被火眼金睛的我们所识破，一切都是一个笑话罢了。<br>然而，真的到此为止了吗？这群英国佬当真只是无聊深井冰？貌似视频里的那个Tony还是诺丁汉大学的物理学家。啊呀呀，这么大的来头只是为了开个大众玩笑么？如果是错的，为什么这个式子会在物理学上有着深刻的影响与应用？<br>我们应该更冷静的思考一下，这式子的背后究竟是什么。</p>
-<h2 id="我们在求什么"><a href="#我们在求什么" class="headerlink" title="我们在求什么"></a>我们在求什么</h2><p>事实上，就像在中学时，老师为了向学生们说明为什么圆锥的体积是同底等高圆柱体积的三分之一时，只是用一个圆锥型容器装了三次水然后正好倒满一个同底等高的圆柱型容器一样。中学老师不会真正给你讲述重积分的计算，Tony也不会真正告诉你全体自然数求和的数学背景。这些看上去是充满漏洞，其实只是为了给你演示这个结论的存在，而非严格意义上的证明。<br>为了追根溯源，我们应当先理解一个本质上的问题：我们在求什么？<br>看上去又是一个咬文嚼字的问题，但如果只是玩文字游戏扣定义细节，那我也没有写这些的必要了。<br>没错，我们是在求“和”，这个答案显而易见。然而，“和”的概念是怎样而来的呢？<br>对于有穷个数的相加，“和”的确定是无可争议的——加起来得到什么就是什么。<br>然而一旦被加数的项数变成了无穷大，我们就很难直接把我们要求的这个“和”给立马拎出来，而是需要用到极限的思想，去对我们的“和”进行一个逼近。<br>在大多数人接触到的传统的数学中，无穷级数的和是由这个级数前n项和来逼近的。<br>换句话说，对于一个级数</p>
-<p>$\sum<em>{n=0}^{+\infty}{a</em>{n}}=a<em>{0}+a</em>{1}+a<em>{2}+a</em>{3}+…$</p>
-<p>我们对它的前n项进行求和，得到一个数列{An}，其中</p>
-<p>$A<em>{n}=\sum</em>{i=0}^{n}{a_{i}}$</p>
-<p>是这个级数的前n项和，如果数列{An}收敛于A</p>
-<p>$\lim<em>{n \rightarrow\infty}{A</em>{n}}=\lim<em>{n \rightarrow\infty}{\sum</em>{i=0}^{n}{a_{i}}}=A$</p>
-<p>则我们说该级数和为A。<br>以上，我们严格的给出了一个级数求和的方式：用级数的前n项和去逼近其真实的值。按这种方式，我们得到的和是所谓的柯西(Cauchy)和。<br>我们有理由相信按照柯西和的方式求得的“和”是正确且严谨的，但是，我们有什么理由相信，就不存在其它的同样正确而严谨的途径，来求得无穷级数的“和”呢？<br>意大利数学家切萨罗(Cesàro)，就提出了另一种方式去让我们求得无穷级数的“和”，同样利用极限去逼近，但切萨罗却是利用前n项的部分和的平均来完成这件事。切萨罗定义了一个新的数列{Cn}，其中</p>
-<p>$C<em>{n}=\frac{\sum</em>{i=0}^{n}{A_{i}}}{n+1}$</p>
-<p>是这个级数的前n项部分和的平均，如果数列{Cn}收敛于C</p>
-<p>$\lim<em>{n \rightarrow \infty}{C</em>{n}}=\lim<em>{n \rightarrow \infty}{\frac{\sum</em>{i=0}^{n}{A_{i}}}{n+1}} =C$</p>
-<p>则我们说该级数的和为C。<br>可以证明，如果级数在柯西和下求得结果为α，那么在切萨罗和下结果与柯西保持一致，也为α。<br>关于切萨罗和与柯西和的比较，我们暂且绕开计算复杂度不表，仅仅从数学的严谨性上来看，我们完全找不到一个理由去说：柯西和优于切萨罗和。我们应该认为，这两种求和的方式，起码在数学地位上是平等的。<br>无独有偶，对于无穷级数“和”的定义，除了切萨罗和外，还有阿贝尔(Abel)和、拉玛努金(Ramanujan)和等等，切萨罗还对上述求和进行推广，给出了广义切萨罗求和的概念。我们不应该在我们仅仅了解柯西和的情况下去否认这些各式各样的“和”的正确性。<br>但似乎切萨罗这群数学家们在干一件费力不讨好的事情，柯西和的定义不仅直观而且便于计算，得到的结果也不算糟糕，那么，刚刚说到的这些人们，是不是只是在做无用功呢？</p>
-<h2 id="一二三四，再来一次"><a href="#一二三四，再来一次" class="headerlink" title="一二三四，再来一次"></a>一二三四，再来一次</h2><p>了解了我们在求什么，我们重新回到最开始的问题上。这次我们用理性的，科学的方式重新对刚刚那几个级数求一次和。<br>首先是格兰迪级数S1：<br>显然，柯西和似乎在这里并不适用了，格兰迪级数的前n项和An是在1、0之间摆动的一个数列，并没有收敛于某个数。如果我们手头只有柯西和这个工具，那么我们也只能对这个看似简单的级数束手无策，悻悻作罢。<br>这个时候，如果用切萨罗的方法求和又会怎样呢？<br>我们来分别计算一下{An}与{Cn}，看看能得到怎样的结果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">$i$</th>
-<th style="text-align:center">$0$</th>
-<th style="text-align:center">$1$</th>
-<th style="text-align:center">$2$</th>
-<th style="text-align:center">$3$</th>
-<th style="text-align:center">$4$</th>
-<th style="text-align:center">$…$</th>
-<th style="text-align:center">$n$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">$a_{i}$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$-1$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$-1$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$…$</td>
-<td style="text-align:center">$(-1)^{n}$</td>
-</tr>
-<tr>
-<td style="text-align:center">$A_{i}$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$0$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$0$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$…$</td>
-<td style="text-align:center">$\frac{1+(-1)^n}{2}$</td>
-</tr>
-<tr>
-<td style="text-align:center">$C_{i}$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$\frac{1}{2}$</td>
-<td style="text-align:center">$\frac{2}{3}$</td>
-<td style="text-align:center">$\frac{1}{2}$</td>
-<td style="text-align:center">$\frac{3}{5}$</td>
-<td style="text-align:center">$…$</td>
-<td style="text-align:center">$\frac{1}{2}+\frac{1+(-1)^n}{4(n+1)}$</td>
-</tr>
-</tbody>
-</table>
-<p>可以看到，虽然柯西和不存在，但是切萨罗平均得到的数列却拥有极限1/2。所以，我们可以说，格兰迪级数具有切萨罗和为1/2。<br>我们发现，切萨罗求和比柯西和不仅是相容的（即柯西和若存在，则切萨罗和存在且与柯西和相同），而且在柯西和无法解决的发散级数中，切萨罗和也有着用武之地。<br>不仅仅是切萨罗和，前文提到的阿贝尔和、拉玛努金和等等求和，都可以处理格兰迪级数，并且得到一致的结果——1/2。<br>就好像无理数将有理数域扩充为实数域，虚数将实数域扩充为复数域。各式各样新的求和方式让我们对级数的本质有了更深刻的认识，对于发散级数那无穷个加号背后蕴含的东西，我们终于可以去进行理论计算，而非望洋兴叹。<br>现在，我们再来看看S2，这个呈增幅趋势正负摆动的级数是不是又像视频中所说，等于1/4呢？<br>如果你拿出纸笔计算一下，你会遗憾的发现，级数S2做切萨罗平均后得到的数列{Cn}并不收敛。我们似乎又碰到了麻烦。难道S2就真的无法求和了吗？<br>广义切萨罗求和再一次帮助我们解决了这个问题。这次我们是用前n项的部分和的平均的平均来逼近数列的和。<br>为了不使文章充斥太多的符号和计算过程而显得晦涩难懂，在这里就不进行具体的计算，有兴趣的同学可以在切萨罗求和的维基百科中看到相关的定义（我承认是太懒不想算这么多复杂的通项，但确实目测加估计过了= =不要在意这些细节）。<br>在二阶切萨罗平均数列的逼近下，我们的的确确的求得了一个极限——1/4，这个和正是视频中给出的答案。同样，阿贝尔和、拉玛努金和也均一致得到这个正确的结论。<br>最后，就到了最让人不能接受的那个等式——自然数之和等于-1/12。<br>如果你动手算了，你会沮丧的发现，无论是柯西和、切萨罗和、广义切萨罗和（哪怕推广到无穷阶）还是阿贝尔和，对于全体自然数相加这个级数，居然都无能为力——似乎无论用什么办法去逼近这个和，得到的都是发散的结果。<br>然而拉玛努金和，却给出了这个正确的结果：-1/12。<br>求的拉玛努金和的具体过程，艰深而复杂。无法在文章中给出证明，但我们已经知道，-1/12这样一个数字，并不是靠一个简单的数学把戏凭空捏造的，这其中涉及到相当有趣且深奥的数学理论。</p>
-<h2 id="想更多一点"><a href="#想更多一点" class="headerlink" title="想更多一点"></a>想更多一点</h2><p>这篇小文章的最后，让我们再想多一点点。<br>在第一个视频中，视频的制作者留下了一个有趣的问题：假设房间里有一盏灯，一分钟之后将它打开，30秒后关上，15秒再打开，以后每次操作时间减半，那么2分钟时，灯处于什么状态？<br>忽略普朗克时间等因素不做讨论，我们从纯思维上的去考虑这个问题，就会发现，格兰迪级数的切萨罗和1/2反映的不正是反应了一个物理上的叠加态吗？<br>又如视频中所说，全体自然数之和等于-1/12，物理上确实已经有相应的实验从统计量角度验证了这个等式的成立，并且该结论被广泛应用于弦论当中。（好吧，我物理真的不好如果说错了求别打脸。）另外关于这个等式，还有很多种证明，其中最简明的应该是黎曼ζ函数在-1处的解得延拓。<br>说到物理，我想起昨天一位朋友说了这样一段话：“物理总是通过一些方法使数学尽量满足和服务于他，而数学应该是严谨的有理有据的吧。”我却不能赞同这样的说法。<br>我认为数学美于物理，不是因为数学比物理更严谨，而是数学比物理更清晰。数学建立于干净简明的公理体系之上，而物理建立于突兀生硬的宇宙物理常数之上。我相信物理的世界同样严谨而自洽。<br>这就好像马赛克铺成的地板一样无缝，但我更喜欢整块的大理石瓷砖。</p>
-<h2 id="一些参考"><a href="#一些参考" class="headerlink" title="一些参考"></a>一些参考</h2><p>两个视频连接：</p>
-<ul>
-<li><a href="http://www.56.com/u17/v_MTA0NTExODg2.html?qq-pf-to=pcqq.c2c" target="_blank" rel="external">第一期</a></li>
-<li><a href="http://www.56.com/u20/v_MTA0NDQ2NTkz.html?qq-pf-to=pcqq.c2c" target="_blank" rel="external">第二期</a></li>
-</ul>
-<p>维基百科：</p>
-<ul>
-<li><a href="http://zh.wikipedia.org/wiki/%E6%A0%BC%E8%98%AD%E8%BF%AA%E7%B4%9A%E6%95%B8" target="_blank" rel="external">格兰迪级数</a></li>
-<li><a href="http://zh.wikipedia.org/wiki/%E5%88%87%E8%90%A8%E7%BD%97%E6%B1%82%E5%92%8C" target="_blank" rel="external">切萨罗求和</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Ramanujan_summation" target="_blank" rel="external">拉玛努金求和</a></li>
-<li><a href="http://zh.wikipedia.org/wiki/%E9%BB%8E%E6%9B%BCzeta%E5%87%BD%E6%95%B0" target="_blank" rel="external">黎曼ζ函数</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/05/10/resume/" itemprop="url">
                   简历
                 </a>
@@ -929,7 +741,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1088,24 +900,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
